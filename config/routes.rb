@@ -9,5 +9,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/actor_id" => "actors#actor_id_action"
+
+
+    get "/all_movies" => "movies#list_all_movies"
+
+    get "/movie_by_id" => "movies#list_movie_by_id"
+
   end
 end
