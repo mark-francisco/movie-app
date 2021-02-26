@@ -47,3 +47,5 @@ gem 'jb'
 
 # generate dummy data with ffaker
 gem 'ffaker'
+
+gem "http"
