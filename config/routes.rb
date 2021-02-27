@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     get "/actor_id" => "actors#actor_id_action"
-
+    get "/actor_id/:id" => "actors#actor_id_action"
+    post "/actor_id_body_param" => "actors#actor_id_action"
 
     get "/all_movies" => "movies#list_all_movies"
 
