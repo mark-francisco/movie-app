@@ -1,23 +1,37 @@
 class Api::MoviesController < ApplicationController
-  def list_all_movies  
+  def index
     @movies = Movie.all
-    @movies_mapped = []
-    @movies.map { |movie|
-      @movies_mapped << {
-        :title => movie.title,
-        :year => movie.year,
-        :plot => movie.plot }
-    }
-    render "all_movies_view.json.jb"
+    render "index.json.jb"
   end
 
-  def list_movie_by_id
-    if params["id"]
-      @movie = Movie.find(params["id"]).slice(:title, :year, :plot)
-    else
-      @movie = "please use the id param in the browser to select a movie from the database"
-    end
-    render "movie_by_id_view.json.jb"
+  def show
+    @movie = Movie.find_by(:id => params[:id])
+    render "show.json.jb"
+  end
+
+  def create
+    @movie = Movie.new(
+      :title => params[:title],
+      :year => params[:year],
+      :plot => params[:plot]
+    )
+    @movie.save
+    render "show.json.jb"
+  end
+
+  def update
+    @movie = Movie.find_by(:id => params[:id])
+    @movie.title = params[:title] || @movie.title
+    @movie.year = params[:year] || @movie.year
+    @movie.plot = params[:plot] || @movie.plot 
+    @movie.save
+    render "show.json.jb"
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    render :json => { :message => "Movie was destroyed!" }
   end
 
 end

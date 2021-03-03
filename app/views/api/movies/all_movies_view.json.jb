@@ -1,5 +1,0 @@
-{
-  # :movies_to_render => @movies
- 
-  :movies_mapped_to_render => @movies_mapped
-}

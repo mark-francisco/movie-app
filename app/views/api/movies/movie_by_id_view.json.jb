@@ -1,5 +1,0 @@
-{
-  # :movie_to_render => @movie
-  :movie_to_render => @movie
-
-}
