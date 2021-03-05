@@ -17,9 +17,13 @@ class Api::ActorsController < ApplicationController
       :gender => params[:gender],
       :age => params[:age]
     )
-    # DON'T FORGET TO SAVE THE NEWLY CREATED RECORD
-    @actor.save
-    render "show.json.jb"
+    # DON'T FORGET TO SAVE THE NEWLY CREATED RECORD. RECORD WILL ONLY SAVE IF VALIDATIONS PASS.
+    # IF @actor.save is true, the @actor.save method will run.
+    if @actor.save
+      render "show.json.jb"
+    else
+      render :json => { :errors => @actor.errors.full_messages }, :status => 406
+    end
   end
 
   def update
@@ -31,8 +35,11 @@ class Api::ActorsController < ApplicationController
     @actor.age = params[:age] || @actor.age
     
     # DON'T FORGET TO SAVE THE NEWLY CREATED RECORD
-    @actor.save
-    render "show.json.jb"
+    if @actor.save
+      render "show.json.jb"
+    else
+      render :json => { :errors => @actor.errors.full_messages }, :status => 406
+    end
   end
 
   def destroy
