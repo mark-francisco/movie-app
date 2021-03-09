@@ -1,0 +1,14 @@
+{
+  # IN THE RENDERED ACTOR PARTIAL, EACH ITEM IS CALLED 'eggs'
+  # once the below concept makes more sense, consider renaming 'eggs' to 'actor'
+
+  :id => eggs.id,
+  :first_name => eggs.first_name,
+  :last_name => eggs.last_name,
+  :known_for => eggs.known_for,
+  :gender => eggs.gender,
+  :age => eggs.age,
+  :movie_id => eggs.movie_id,
+  :movie_title => eggs.movie.title,
+  :movie_plot => eggs.movie.plot
+}

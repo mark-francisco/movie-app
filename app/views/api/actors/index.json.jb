@@ -1,10 +1,4 @@
 @actors.map do |actor|
-  {
-    :id => actor.id,
-    :first_name => actor.first_name,
-    :last_name => actor.last_name,
-    :known_for => actor.known_for,
-    :gender => actor.gender,
-    :age => actor.age,
-  }
+  # :locals => { "whenever you see:" :[variable name used in the partial] => "you should actually use:" [variable name from index.json.jb map function you actually wanna use] }
+  render :partial => "actor.json.jb", :locals => { :eggs => actor }
 end

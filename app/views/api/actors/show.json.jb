@@ -1,8 +1,2 @@
-{
-  :id => @actor.id,
-  :first_name => @actor.first_name,
-  :last_name => @actor.last_name,
-  :known_for => @actor.known_for,
-  :gender => @actor.gender,
-  :age => @actor.age,
-}
+# :locals => { "whenever you see:" :[variable name used in partial] => "you should actually use:" [variable name passed in to show.json.jb that you actually wanna use] }
+render :partial => "actor.json.jb", :locals => { :eggs => @actor }
