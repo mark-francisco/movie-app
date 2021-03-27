@@ -18,7 +18,7 @@ class Api::MoviesController < ApplicationController
       :year => params[:year],
       :plot => params[:plot],
       :director => params[:director],
-      :english => params[:english]
+      :english => params[:english],
     )
     # DON'T FORGET TO SAVE THE NEWLY CREATED RECORD. RECORD WILL ONLY SAVE IF VALIDATIONS PASS.
     if @movie.save
@@ -32,9 +32,9 @@ class Api::MoviesController < ApplicationController
     @movie = Movie.find_by(:id => params[:id])
     @movie.title = params[:title] || @movie.title
     @movie.year = params[:year] || @movie.year
-    @movie.plot = params[:plot] || @movie.plot 
-    @movie.director = params[:director] || @movie.director 
-    @movie.english = params[:english] || @movie.english 
+    @movie.plot = params[:plot] || @movie.plot
+    @movie.director = params[:director] || @movie.director
+    @movie.english = params[:english] || @movie.english
 
     # DON'T FORGET TO SAVE THE NEWLY CREATED RECORD. RECORD WILL ONLY SAVE IF VALIDATIONS PASS.
     if @movie.save
@@ -49,5 +49,4 @@ class Api::MoviesController < ApplicationController
     @movie.destroy
     render :json => { :message => "Movie was destroyed!" }
   end
-
 end
