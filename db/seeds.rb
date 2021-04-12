@@ -9,12 +9,12 @@
 # Actor.create(:first_name => "Scarlett", :last_name => "Johansson", :known_for => "Jojo Rabbit")
 # Actor.create(:first_name => "Tom", :last_name => "Cruise", :known_for => "Top Gun")
 
-# https://github.com/ffaker/ffaker/blob/main/REFERENCE.md
+# # https://github.com/ffaker/ffaker/blob/main/REFERENCE.md
 # 5.times do
 #   Actor.create(:first_name => FFaker::NameFR.first_name, :last_name => FFaker::NameCS.last_name, :known_for => FFaker::Movie.title)
 #   Actor.create(:first_name => FFaker::NamePL.first_name, :last_name => FFaker::NameTHEN.last_name, :known_for => FFaker::Movie.title)
 # end
 
 # 3.times do
-#   Movie.create(:title => FFaker::Movie.title , :year => rand(1950..2020), :plot => FFaker::Lorem.sentences(sentence_count = 2))
+#   Movie.create(:title => FFaker::Movie.title, :year => rand(1950..2020), :plot => FFaker::Lorem.sentences(sentence_count = 2))
 # end
