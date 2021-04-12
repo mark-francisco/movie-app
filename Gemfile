@@ -48,3 +48,5 @@ gem 'jb'
 # generate dummy data with ffaker
 gem 'ffaker'
 gem 'jwt'
+
+gem 'seed_dump'
