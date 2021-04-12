@@ -1,2 +1,2 @@
 # :locals => { "whenever you see:" :[variable name used in partial] => "you should actually use:" [variable name passed in to show.json.jb that you actually wanna use] }
-render :partial => "actor.json.jb", :locals => { :eggs => @actor }
+render :partial => "actor.json.jb", :locals => { :actor => @actor }
